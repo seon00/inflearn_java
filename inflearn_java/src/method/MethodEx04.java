@@ -9,17 +9,22 @@ public class MethodEx04 {
         int balance = sc.nextInt();
 
         while(true) {
-            System.out.println("1. 입금 | 2. 출금 | 3. 종료");
+            System.out.println("-------------------------------------------");
+            System.out.println("1. 입금 | 2. 출금 | 3. 잔액 확인 | 4. 종료");
+            System.out.println("-------------------------------------------");
+            System.out.print("선택: ");
             int num = sc.nextInt();
             if(num == 1) {
-                System.out.print("입금 할 금액을 입력하세요: ");
+                System.out.print("입금액을 입력하세요: ");
                 int price = sc.nextInt();
                 balance = deposit(balance, price);
             } else if (num == 2) {
-                System.out.print("출금 할 금액을 입력하세요: ");
+                System.out.print("출금액을 입력하세요: ");
                 int price = sc.nextInt();
                 balance = withdraw(balance, price);
             } else if (num == 3) {
+                System.out.println("잔액 잔액: " + balance);
+            } else if (num == 4) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
             } else {
