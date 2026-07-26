@@ -26,6 +26,7 @@ public class MethodEx04 {
                 System.out.println("잘못입력하였습니다.");
             }
         }
+        System.out.println("최종 잔액: " + balance);
     }
 
     public static int deposit(int balance, int input){ // 입금 메서드
@@ -36,7 +37,12 @@ public class MethodEx04 {
 
     public static int withdraw(int balance, int output){ // 출금 메서드
         int total = balance - output;
-        System.out.println(output + "원을 출금하였습니다. 현재 잔액: " + total + "원");
-        return total;
+        if (total >= 0) {
+            System.out.println(output + "원을 출금하였습니다. 현재 잔액: " + total + "원");
+            return total;
+        } else {
+            System.out.println(output + "원을 출금하려 했으나 잔액이 부족합니다.");
+            return balance;
+        }
     }
 }
